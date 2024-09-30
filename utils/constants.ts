@@ -1,14 +1,14 @@
-import About from '../components/About';
-import Blogs from '../components/Blogs';
-import Clear from '../components/Clear';
-import Education from '../components/Education';
-import Help from '../components/Help';
-import Input from '../components/Input';
-import Projects from '../components/Projects';
-import Resume from '../components/Resume';
-import Technologies from '../components/Technologies';
-import Theme from '../components/Theme';
-import Welcome from '../components/Welcome';
+import About from '@/components/About';
+import Blogs from '@/components/Blogs';
+import Clear from '@/components/Clear';
+import Education from '@/components/Education';
+import Help from '@/components/Help';
+import Input from '@/components/Input';
+import Projects from '@/components/Projects';
+import Resume from '@/components/Resume';
+import Technologies from '@/components/Technologies';
+import Theme from '@/components/Theme';
+import Welcome from '@/components/Welcome';
 
 export const NAME = `
      _                      _           _     _

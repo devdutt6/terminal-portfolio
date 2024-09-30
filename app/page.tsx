@@ -1,10 +1,10 @@
 'use client';
 
+import Input from '@/components/Input';
+import StaticInput from '@/components/StaticInput';
+import Welcome from '@/components/Welcome';
 import { useEffect, useState } from 'react';
-import Input from './components/Input';
-import StaticInput from './components/StaticInput';
-import Welcome from './components/Welcome';
-import { ComponentContext } from './utils/context';
+import { ComponentContext } from '../utils/context';
 
 export default function Home() {
   const [components, setComponents] = useState<(() => JSX.Element)[]>([
@@ -18,7 +18,7 @@ export default function Home() {
       .getElementsByTagName('body')[0]
       .getBoundingClientRect().height;
 
-    const item = document.getElementById('centerIt')?.parentElement;
+    const item = document.getElementById('centerIt')?.parentElement as any;
     const h = (screenH - item?.clientHeight) / 2;
     console.log(h);
     item?.style.setProperty('margin-top', `${h}px`);

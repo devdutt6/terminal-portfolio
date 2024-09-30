@@ -1,3 +1,8 @@
+import Invalid from '@/components/Invalid';
+import StaticInput from '@/components/StaticInput';
+import { commandMap, inputLength } from '@/utils/constants';
+import { ComponentContext } from '@/utils/context';
+import { getFullSuggestion, getSuggestion } from '@/utils/helper';
 import {
   ChangeEventHandler,
   KeyboardEventHandler,
@@ -7,11 +12,6 @@ import {
   useRef,
   useState,
 } from 'react';
-import { commandMap, inputLength } from '../../utils/constants';
-import { ComponentContext } from '../../utils/context';
-import { getFullSuggestion, getSuggestion } from '../../utils/helper';
-import Invalid from '../Invalid';
-import StaticInput from '../StaticInput';
 
 export default function useInput({ cmd }: { cmd: string }) {
   const { components, setComponents, history, setHistory } =

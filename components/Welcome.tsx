@@ -1,14 +1,5 @@
 import { NAME, PHOTO } from '../utils/constants';
 
-const LINES = [
-  {
-    line: '',
-  },
-  {
-    line: "I'm Devdutt, blah blah lorem blah blah lorem blah blah lorem blah blah lorem blah blah lorem blah blah lorem blah blah lorem.",
-  },
-];
-
 export default function Welcome() {
   return (
     <div className='flex flex-col lg:flex-row gap-14'>
