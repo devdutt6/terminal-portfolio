@@ -3,21 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #d0d0d0;
+  --highlight: #ff6500;
+  --link: #4379f2;
+  --orange: #c79821;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #d0d0d0;
+    --highlight: #ff6500;
+    --link: #4379f2;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+*::selection {
+  background-color: var(--highlight);
+  color: var(--background);
+}
+
+::-webkit-scrollbar {
+  display: block;
+  background-color: var(--background);
+  width: 0.7em;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 @layer utilities {
