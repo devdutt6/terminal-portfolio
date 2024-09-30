@@ -1,29 +1,12 @@
 export default function Invalid({ command }: { command: string }) {
-  const PRE = `
-\`
-`;
-  const styles = {
-    section: {
-      fontSize: '1.1em',
-      padding: '8px 0px',
-    },
-    grey: {
-      padding: '8px 0px',
-      color: 'var(--para-text)',
-    },
-    green: {
-      padding: '8px 0px',
-      color: 'var(--cursor-color)',
-    },
-  };
-
   return (
-    <div style={styles.section}>
-      <span style={styles.grey}>{command}</span>: command not found,
-      <pre>{PRE}</pre>
-      For the list of available command, type `
-      <span style={styles.green}>help</span>
-      `.
+    <div className=''>
+      <p className='mb-4'>
+        <span className='font-bold text-red-500'>'{command}'</span>: Invalid
+        command / command not found
+      </p>{' '}
+      For the list of available commands, type
+      <span className='text-highlight'> help</span>.
     </div>
   );
 }

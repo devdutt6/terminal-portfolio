@@ -2,10 +2,7 @@ import { NAME, PHOTO } from '../utils/constants';
 
 const LINES = [
   {
-    line: "Welcome to Devdutt's terminal portfolio.",
-  },
-  {
-    line: '----',
+    line: '',
   },
   {
     line: "I'm Devdutt, blah blah lorem blah blah lorem blah blah lorem blah blah lorem blah blah lorem blah blah lorem blah blah lorem.",
@@ -14,20 +11,27 @@ const LINES = [
 
 export default function Welcome() {
   return (
-    <div className='flex justify-between'>
-      <div>
-        <pre className='font-bold'>{NAME}</pre>
-        <h1> {LINES[0].line}</h1>
-        <p>{LINES[1].line}</p>
-        <h2> {LINES[2].line}</h2>
-        <br />
-        <p>
-          For the list of available commands, type
-          <span className='text-highlight'> help</span>.
-        </p>
+    <div className='flex flex-col lg:flex-row gap-14'>
+      <div className=''>
+        <pre className='leading-tight'>{PHOTO}</pre>
       </div>
       <div>
-        <pre className='leading-tight'>{PHOTO}</pre>
+        <pre className='font-bold animate-text'>{NAME}</pre>
+        <h1>Welcome to my terminal portfolio.</h1>
+        <p>-------------------------------------------</p>
+        <h2>
+          Hi, I'm Devdutt and this is a portfolio in disguise of a terminal
+        </h2>
+        <p className='pt-2'>
+          Explore and feel free to critique and share it on my @
+          <a href='mailto:devduttchudasama1339@gmail.com' className='text-link'>
+            email
+          </a>
+        </p>
+        <p className='pt-6'>
+          Get started with command
+          <span className='text-highlight'> help</span>.
+        </p>
       </div>
     </div>
   );

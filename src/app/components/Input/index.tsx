@@ -13,7 +13,7 @@ export default function Input({ command: cmd }: { command?: string }) {
       <span className='tracking-wide mr-1'>:~$</span>
       <input
         name='commandInput'
-        autoComplete='false'
+        autoComplete='off'
         autoCorrect='false'
         autoFocus={true}
         type='text'

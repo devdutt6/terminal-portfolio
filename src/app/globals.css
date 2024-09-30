@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
-  --foreground: #d0d0d0;
-  --highlight: #ff6500;
-  --link: #4379f2;
-  --orange: #c79821;
+  --background: 0 0 0;
+  --foreground: 208 208 208;
+  --highlight: 255 101 0;
+  --link: 67 121 242;
+  --orange: 199 152 33;
+  --shade: 31 31 31;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -20,25 +21,30 @@
 } */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
   font-family: 'Ubuntu Mono', monospace;
 }
 
 *::selection {
-  background-color: var(--highlight);
-  color: var(--background);
+  background-color: rgb(var(--highlight));
+  color: rgb(var(--background));
+}
+
+.shd {
+  box-shadow: 2px 2px 18px rgba(var(--foreground, 1)),
+    -2px -2px 18px rgba(var(--foreground, 1));
 }
 
 ::-webkit-scrollbar {
   display: block;
-  background-color: var(--background);
+  background-color: rgb(var(--background));
   width: 0.7em;
   border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--foreground);
+  background-color: rgb(var(--foreground));
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -46,5 +52,33 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.animate-text {
+  animation: gradient 6s ease-in-out infinite;
+  background-clip: text !important;
+  color: transparent !important;
+  background-size: 180% 180% !important;
+  background: linear-gradient(
+    135deg,
+    #fed90f,
+    #00e1ff,
+    #09f1b8,
+    #00b7ff,
+    #fed90f,
+    #00e1ff,
+    #09f1b8,
+    #00b7ff
+  );
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
   }
 }

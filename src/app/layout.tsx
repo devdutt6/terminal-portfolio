@@ -13,11 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='my-2 h-[92%]'>
-        <div className='@container lg:aspect-video items-center max-w-[1200px] px-2 mx-1 lg:mx-auto border-2 border-foreground rounded-lg my-4 overflow-y-auto lg:shadow-md shadow-white overflow-x-clip'>
+      <body className='py-4 px-4 bg-background bg-[radial-gradient(circle,var(--foreground)_0%,var(--background)_55%);] h-screen'>
+        <div className='@container lg:aspect-video mx-auto items-center max-w-[1200px] px-2 border-2 border-foreground rounded-lg overflow-y-scroll shadow-sm shadow-highlight bg-background shd'>
           {children}
         </div>
       </body>
     </html>
   );
 }
+
+//  radial-gradient(circle,rgba(31,255,117,1) 0%, rgba(0,0,0,1) 100%);

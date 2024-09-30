@@ -1,50 +1,44 @@
-const generateSpaces = (spaces: number) => {
-  let space = '\xA0\xA0';
-  for (let i = 0; i < spaces; i++) space += '\xA0';
-  return space;
-};
-
 export default function Help() {
   const helper = [
     {
       command: 'about',
-      description: 'about Devdutt',
-      tab: 8,
+      description: 'about me',
     },
     {
       command: 'education',
-      description: 'my education background',
-      tab: 4,
+      description: 'education and course work',
     },
     {
       command: 'projects',
       description: 'personal projects',
-      tab: 5,
+    },
+    {
+      command: 'technologies',
+      description: 'list of technologies I have worked with',
+    },
+    {
+      command: 'blogs',
+      description: 'list of blogs I tried to post',
     },
     {
       command: 'help',
       description: 'check available commands',
-      tab: 9,
     },
     {
       command: 'theme',
       description: 'toggle between different themes',
-      tab: 8,
     },
     {
       command: 'resume',
       description: 'here is my resume',
-      tab: 7,
     },
     {
       command: 'welcome',
       description: 'display hero section',
-      tab: 6,
     },
     {
       command: 'clear',
       description: 'clear the terminal',
-      tab: 8,
     },
   ];
 
@@ -52,28 +46,24 @@ export default function Help() {
     {
       shortcut: 'Tab',
       description: 'autocompletes the command based on input',
-      tabs: 11,
     },
     {
       shortcut: 'Up Arrow',
       description: 'go back to previous commands',
-      tabs: 6,
     },
     {
       shortcut: 'Down Arrow',
       description: 'go forward in previous commands',
-      tabs: 4,
     },
     {
       shortcut: 'Ctrl/cmd + l',
       description: 'clears the terminal',
-      tabs: 2,
     },
   ];
   return (
     <>
       <div className='mb-10'>
-        <h2 className='text-2xl font-semibold'>Commands</h2>
+        <h2 className='text-3xl font-semibold'>Commands</h2>
         <hr />
         <dl className='ml-4 mt-2'>
           {helper.map((manual, index) => (
@@ -88,7 +78,7 @@ export default function Help() {
       </div>
 
       <div className=''>
-        <h2 className='text-2xl font-semibold'>Short-cuts</h2>
+        <h2 className='text-3xl font-semibold'>Short-cuts</h2>
         <hr />
         <dl className='flex flex-col gap-2 ml-4 mt-2'>
           {short.map((shortcut, index) => (

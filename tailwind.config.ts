@@ -9,11 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        highlight: 'var(--highlight)',
-        link: 'var(--link)',
-        orange: 'var(--orange)',
+        background: 'rgb(var(--background))',
+        foreground: 'rgb(var(--foreground))',
+        highlight: 'rgb(var(--highlight))',
+        link: 'rgb(var(--link))',
+        orange: 'rgb(var(--orange))',
+        shade: 'rgb(var(--shade))',
       },
     },
   },
