@@ -18,9 +18,9 @@ export default function Home() {
       .getElementsByTagName('body')[0]
       .getBoundingClientRect().height;
 
-    const item = document.getElementById('centerIt')?.parentElement as any;
+    const item = document.getElementById('centerIt')
+      ?.parentElement as HTMLDivElement;
     const h = (screenH - item?.clientHeight) / 2;
-    console.log(h);
     item?.style.setProperty('margin-top', `${h}px`);
   }, []);
 

@@ -69,6 +69,7 @@ export default function Theme() {
       '--link',
       themes[theme].orangeColor
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <></>;

@@ -11,7 +11,7 @@ export default function Welcome() {
         <h1>Welcome to my terminal portfolio.</h1>
         <p>-------------------------------------------</p>
         <h2>
-          Hi, I'm Devdutt and this is a portfolio in disguise of a terminal
+          Hi, I&apos;m Devdutt and this is a portfolio in disguise of a terminal
         </h2>
         <p className='pt-2'>
           Explore and feel free to critique and share it on my @

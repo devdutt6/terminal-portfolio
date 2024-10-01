@@ -3,7 +3,6 @@ import Blogs from '@/components/Blogs';
 import Clear from '@/components/Clear';
 import Education from '@/components/Education';
 import Help from '@/components/Help';
-import Input from '@/components/Input';
 import Projects from '@/components/Projects';
 import Resume from '@/components/Resume';
 import Technologies from '@/components/Technologies';
@@ -51,15 +50,27 @@ export const suggestions = [
   'clear',
 ];
 
-export const commandMap = {
-  input: Input,
-  technologies: Technologies,
-  blogs: Blogs,
+export type elementMap = {
+  welcome: () => JSX.Element;
+  projects: () => JSX.Element;
+  about: () => JSX.Element;
+  education: () => JSX.Element;
+  help: () => JSX.Element;
+  technologies: () => JSX.Element;
+  blogs: () => JSX.Element;
+  theme: () => JSX.Element;
+  resume: () => JSX.Element;
+  clear: () => JSX.Element;
+};
+
+export const commandMap: Record<keyof elementMap, () => JSX.Element> = {
   welcome: Welcome,
-  about: About,
   projects: Projects,
+  about: About,
   education: Education,
   help: Help,
+  technologies: Technologies,
+  blogs: Blogs,
   theme: Theme,
   resume: Resume,
   clear: Clear,

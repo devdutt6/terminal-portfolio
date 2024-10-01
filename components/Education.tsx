@@ -27,7 +27,9 @@ export default function Education() {
       <hr />
       <div className='flex flex-col mt-2'>
         {courses.map((v) => (
-          <p className='py-1'>-- {v}</p>
+          <p className='py-1' key={v}>
+            -- {v}
+          </p>
         ))}
       </div>
     </>

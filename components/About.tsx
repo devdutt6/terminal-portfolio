@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div>
-      <p>-- Hi, I'm Devdutt!, a Software Engineer from Gujarat.</p>
+      <p>-- Hi, I&apos;m Devdutt!, a Software Engineer from Gujarat.</p>
       <h2 className='text-2xl font-semibold my-2'>| Jack of all Trades |</h2>
       <ul className='list-disc flex flex-col gap-2 ml-6'>
         <li className='leading-tight'>

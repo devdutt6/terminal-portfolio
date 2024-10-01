@@ -1,12 +1,11 @@
 import Invalid from '@/components/Invalid';
 import StaticInput from '@/components/StaticInput';
-import { commandMap, inputLength } from '@/utils/constants';
+import { commandMap, elementMap, inputLength } from '@/utils/constants';
 import { ComponentContext } from '@/utils/context';
 import { getFullSuggestion, getSuggestion } from '@/utils/helper';
 import {
   ChangeEventHandler,
   KeyboardEventHandler,
-  LegacyRef,
   useContext,
   useEffect,
   useRef,
@@ -16,29 +15,29 @@ import {
 export default function useInput({ cmd }: { cmd: string }) {
   const { components, setComponents, history, setHistory } =
     useContext(ComponentContext);
-  const ref = useRef<LegacyRef<HTMLInputElement> | undefined>();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [index, setIndex] = useState(0);
   const [command, setCommand] = useState<string>(cmd || '');
   const [suggestion, setSuggestion] = useState('');
 
   // focus on the field on the render and focus on click
   useEffect(() => {
-    const focus = () => ref?.current?.focus();
+    const focus = () => inputRef?.current?.focus();
     focus();
     document.addEventListener('click', focus);
 
-    () => {
+    return () => {
       document.removeEventListener('click', focus);
     };
   }, []);
 
   // After loading new components above it scroll to the input
   useEffect(() => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    inputRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [components]);
 
   const handleKeys: KeyboardEventHandler<HTMLInputElement> = (e) => {
-    e.target.style.width = inputLength(command);
+    e.currentTarget.style.width = inputLength(command);
 
     // clear screen
     if ((e.ctrlKey || e.metaKey) && e.code === 'KeyL') {
@@ -52,7 +51,7 @@ export default function useInput({ cmd }: { cmd: string }) {
 
       const suggested = getFullSuggestion(command);
       if (suggested) {
-        e.target.style.width = inputLength(suggested);
+        e.currentTarget.style.width = inputLength(suggested);
         setCommand(suggested);
         setSuggestion('');
       }
@@ -64,7 +63,7 @@ export default function useInput({ cmd }: { cmd: string }) {
       e.key.toLowerCase() === 'arrowdown'
     ) {
       setCommand(history[index]);
-      e.target.style.width = inputLength(history[index]);
+      e.currentTarget.style.width = inputLength(history[index]);
       if (e.key.toLowerCase() === 'arrowup') {
         setIndex((i) => (i > 0 ? i - 1 : 0));
       } else {
@@ -74,13 +73,14 @@ export default function useInput({ cmd }: { cmd: string }) {
 
     if (e.key.toLowerCase() === 'enter') {
       // handle submit
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       setComponents((v: any) => [
         ...v,
         // static input with entered command
         () => <StaticInput command={command} />,
         // if valid command that new component
-        commandMap[command]
-          ? commandMap[command]
+        Object.keys(commandMap).includes(command)
+          ? commandMap[command as keyof elementMap]
           : () => <Invalid command={command} />,
       ]);
       setIndex(history.length);
@@ -96,5 +96,11 @@ export default function useInput({ cmd }: { cmd: string }) {
     setSuggestion(getSuggestion(typedCommand));
   };
 
-  return { handleCommandChange, handleKeys, suggestion, command, ref };
+  return {
+    handleCommandChange,
+    handleKeys,
+    suggestion,
+    command,
+    ref: inputRef,
+  };
 }

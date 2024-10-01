@@ -6,6 +6,7 @@ export default function Clear() {
 
   useEffect(() => {
     setComponents([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <></>;
