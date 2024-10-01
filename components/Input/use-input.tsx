@@ -91,7 +91,7 @@ export default function useInput({ cmd }: { cmd: string }) {
   };
 
   const handleCommandChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    const typedCommand = e.target.value;
+    const typedCommand = e.target.value?.toLowerCase() || '';
     setCommand(typedCommand);
     setSuggestion(getSuggestion(typedCommand));
   };

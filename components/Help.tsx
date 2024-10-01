@@ -83,14 +83,13 @@ export default function Help() {
         <dl className='flex flex-col gap-2 ml-4 mt-2'>
           {short.map((shortcut, index) => (
             <div className='flex items-center' key={index}>
-              <dt className=''>
+              <dt className='min-w-fit'>
                 <code className='border-2 border-highlight px-2 rounded-lg'>
                   {shortcut.shortcut}
                 </code>
               </dt>
               &nbsp;=&gt;&nbsp;
               <dd>{shortcut.description}</dd>
-              <br />
             </div>
           ))}
         </dl>

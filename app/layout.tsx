@@ -41,8 +41,8 @@ export default function RootLayout({
         <meta property='twitter:creator' content='@devdutt_sinh' />
         <meta property='twitter:card' content='summary_large_image' />
       </Head>
-      <body className='py-4 px-4 bg-background bg-[radial-gradient(circle,rgb(var(--foreground))_0%,rgb(var(--background))_55%);] h-screen'>
-        <div className='@container lg:aspect-video mx-auto items-center max-w-[1200px] px-2 border-2 border-foreground rounded-lg overflow-y-scroll shadow-sm shadow-highlight bg-background shd'>
+      <body className='bg-background gradient h-screen text-sm sm:text-md md:text-base'>
+        <div className='lg:aspect-video mx-auto items-center max-w-[1200px] px-2 lg:border-2 lg:border-foreground lg:rounded-lg overflow-scroll bg-background shd'>
           {children}
         </div>
       </body>

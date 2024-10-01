@@ -7,7 +7,9 @@ export default function Welcome() {
         <pre className='leading-tight'>{PHOTO}</pre>
       </div>
       <div>
-        <pre className='font-bold animate-text'>{NAME}</pre>
+        <pre className='font-bold animate-text text-[10px] sm:text-md md:text-base'>
+          {NAME}
+        </pre>
         <h1>Welcome to my terminal portfolio.</h1>
         <p>-------------------------------------------</p>
         <h2>

@@ -1,8 +1,8 @@
 export default function StaticInput({ command }: { command?: string }) {
   return (
     <div className='flex no-wrap py-1'>
-      <span className='text-orange tracking-wide mr-1'>visitor</span>@
-      <span className='text-highlight tracking-wide ml-1'>
+      <span className='text-orange tracking-wide sm:mr-1'>visitor</span>@
+      <span className='text-highlight tracking-wide ml-1 hidden sm:inline'>
         terminal.devdutt
       </span>
       <span className='tracking-wide mr-1'>:~$</span>

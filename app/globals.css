@@ -36,6 +36,14 @@ body {
     -2px -2px 18px rgba(var(--foreground, 1));
 }
 
+.gradient {
+  background: radial-gradient(
+    circle,
+    rgb(var(--foreground)) 0%,
+    rgb(var(--background)) 55%
+  );
+}
+
 ::-webkit-scrollbar {
   display: block;
   background-color: rgb(var(--background));
