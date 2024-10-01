@@ -34,7 +34,7 @@ export default function Home() {
     }
     window.addEventListener('resize', setElement);
     setElement();
-    () => {
+    return () => {
       window.removeEventListener('resize', setElement);
     };
   }, []);
