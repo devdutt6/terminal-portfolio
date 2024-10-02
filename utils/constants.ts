@@ -82,3 +82,9 @@ export const inputLength = (prompt: string) => {
 
 export const RESUME_LINK =
   'https://drive.google.com/uc?export=download&id=1RII6llNMbBZHIuWp53GU3M6SWnoeEgSO';
+export const DEPLOYED_LINK = 'https://terminal-portfolio-drab.vercel.app/';
+export const MAIN = 'https://devdutt-portfolio.vercel.app/';
+export const ABOUT = MAIN + 'about';
+export const BLOG = MAIN + 'blogs';
+export const PROJECTS = MAIN + 'projects';
+export const SKILLS = MAIN + 'skills';

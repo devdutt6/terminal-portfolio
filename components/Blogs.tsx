@@ -1,8 +1,9 @@
+import { BLOG } from '@/utils/constants';
 import { useEffect } from 'react';
 
 export default function Blogs() {
   useEffect(() => {
-    window.open('https://devdutt-portfolio.vercel.app/blogs', '_blank');
+    window.open(BLOG, '_blank');
   }, []);
   return <></>;
 }

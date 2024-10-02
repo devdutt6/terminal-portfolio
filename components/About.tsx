@@ -1,3 +1,5 @@
+import { ABOUT } from '@/utils/constants';
+
 export default function About() {
   return (
     <div>
@@ -21,7 +23,7 @@ export default function About() {
         </li>
       </ul>
       <a
-        href='https://devdutt-portfolio.vercel.app/about'
+        href={ABOUT}
         target='_blank'
         className='text-highlight underline underline-offset-4 mt-2 block'
       >
