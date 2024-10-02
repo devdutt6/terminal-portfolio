@@ -42,7 +42,7 @@ export default function RootLayout({
         <meta property='twitter:card' content='summary_large_image' />
       </Head>
       <body className='bg-background gradient h-screen text-sm sm:text-md md:text-base'>
-        <div className='lg:aspect-video mx-auto items-center max-w-[1200px] px-2 lg:border-2 lg:border-foreground lg:rounded-lg overflow-scroll bg-background shd'>
+        <div className='lg:aspect-video mx-auto items-center max-w-[1200px] px-2 lg:border-2 lg:border-foreground lg:rounded-lg overflow-y-scroll bg-background'>
           {children}
         </div>
       </body>
