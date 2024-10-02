@@ -37,7 +37,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('resize', setElement);
     };
-  }, []);
+  }, [history]);
 
   return (
     <ComponentContext.Provider

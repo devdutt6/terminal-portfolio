@@ -81,4 +81,4 @@ export const inputLength = (prompt: string) => {
 };
 
 export const RESUME_LINK =
-  'https://drive.google.com/uc?export=download&id=1R-ahuKsL9w6er_cuyvb0lTJ2hZ30BGBy';
+  'https://drive.google.com/uc?export=download&id=1RII6llNMbBZHIuWp53GU3M6SWnoeEgSO';
